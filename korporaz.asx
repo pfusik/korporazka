@@ -1,0 +1,40 @@
+	org	$3000
+
+	ift	COMPATIBLE
+main
+	ldx	#$60
+	mva	#3	$342,x
+	mwa	#screen_device	$344,x
+	mva	#8	$34a,x
+	mva	#6	$34b,x
+	jsr	$e456
+	mva	#$b	$342,x
+	mwa	#0	$348,x
+	els
+	lda	#6
+	jsr	$ef90
+	eif
+loop
+	lda	$55
+	and	$54
+	seq:tya
+;	eor	#1
+	ift	COMPATIBLE
+	jsr	$e456
+	els
+	jsr	$f1a4
+	tya
+	eif
+	bpl	loop
+color	mva	$d40b	$d016
+	ift	COMPATIBLE
+	jmp	color
+	els
+	bvc	color
+	eif
+
+	ift	COMPATIBLE
+screen_device	dta	c'S:',$9b
+
+	run	main
+	eif

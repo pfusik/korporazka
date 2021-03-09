@@ -1,0 +1,46 @@
+Taquart presents
+"Korporazka"
+
+32-byte intro for Atari XL/XE
+with at least 16 KB RAM
+PAL/NTSC compatible
+
+First presented in March 2021
+at the Lovebyte Party
+http://www.lovebyte.party
+
+Programmed by
+Piotr '0xF' Fusik <fox@scene.pl>
+
+KORPORAZ.XEX = 32-byte version
+  compatible with every stock XL/XE
+KORPORAC.XEX = version also
+  compatible with 400/800
+  and non-standard OSes and DOSes
+
+Ingredients:
+
+           KORPORAZ.XEX  KORPORAC.XEX
+DOS header       6            12
+Graphics mode    5            33
+Sierpinski      12            25
+Transition       1             0
+Rainbow          8             9
+-------------------------------------
+Total:       32 bytes      79 bytes
+
+Greetings:
+Agenda, Lamers, Desire, LaResistance,
+MEC, Mad Team, New Generation,
+Mystic Bytes, Zelax, Slight,
+Tristesse, Blowjobb, Our 5oft,
+Bit Busters, DLT, Satantronic, Samar,
+SSG, Sword Soft, JAC!, XXL, Kaz, TDC,
+Duddie, PG, MaPa, Rumun, Jell, Zenon,
+Nir Dery, Marok, Candle, Sikor,
+Grzybson, Henryk, Yerzmyey.
+
+Coming soon to pouet.net.
+Video coming soon to YouTube.
+Source code:
+https://github.com/pfusik/korporazka
