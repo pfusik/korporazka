@@ -1,17 +1,18 @@
-	org	$3000
+MODE	equ	8
+
+	org	$2000
 
 	ift	COMPATIBLE
 main
 	ldx	#$60
 	mva	#3	$342,x
 	mwa	#screen_device	$344,x
-	mva	#8	$34a,x
-	mva	#6	$34b,x
+	mwa	#8+[MODE<<8]	$34a,x
 	jsr	$e456
 	mva	#$b	$342,x
 	mwa	#0	$348,x
 	els
-	lda	#6
+	lda	#MODE
 	jsr	$ef90
 	eif
 loop
@@ -26,7 +27,7 @@ loop
 	tya
 	eif
 	bpl	loop
-color	mva	$d40b	$d016
+color	mva	$d40b	$d018
 	ift	COMPATIBLE
 	jmp	color
 	els

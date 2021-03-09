@@ -14,6 +14,7 @@ Piotr '0xF' Fusik <fox@scene.pl>
 
 KORPORAZ.XEX = 32-byte version
   compatible with every stock XL/XE
+
 KORPORAC.XEX = version also
   compatible with 400/800
   and non-standard OSes and DOSes
@@ -22,12 +23,12 @@ Ingredients:
 
            KORPORAZ.XEX  KORPORAC.XEX
 DOS header       6            12
-Graphics mode    5            33
+Graphics mode    5            31
 Sierpinski      12            25
 Transition       1             0
 Rainbow          8             9
 -------------------------------------
-Total:       32 bytes      79 bytes
+Total:       32 bytes      77 bytes
 
 Greetings:
 Agenda, Lamers, Desire, LaResistance,
