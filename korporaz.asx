@@ -1,8 +1,7 @@
 MODE	equ	8
 
-	org	$2000
-
 	ift	COMPATIBLE
+	org	$600
 main
 	ldx	#$60
 	mva	#3	$342,x
@@ -12,6 +11,7 @@ main
 	mva	#$b	$342,x
 	mwa	#0	$348,x
 	els
+	org	$2000
 	lda	#MODE
 	jsr	$ef90
 	eif
