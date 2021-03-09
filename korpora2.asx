@@ -1,0 +1,37 @@
+MODE	equ	8
+
+	org	$2000
+
+	ift	COMPATIBLE
+main
+	ldx	#$60
+	mva	#3	$342,x
+	mwa	#screen_device	$344,x
+	mwa	#8+[MODE<<8]	$34a,x
+	jsr	$e456
+	mva	#$b	$342,x
+	mwa	#0	$348,x
+	sta	$2c6
+	els
+	lda	#MODE
+	jsr	$ef90
+	sty	$2c6
+	eif
+loop
+	lda	$54
+var	equ	*-1
+	cmp	$d20a
+	lda	#0
+	rol	@
+	ift	COMPATIBLE
+	jsr	$e456
+	els
+	jsr	$f1a4
+	eif
+	jmp	loop
+
+	ift	COMPATIBLE
+screen_device	dta	c'S:',$9b
+
+	run	main
+	eif

@@ -1,5 +1,8 @@
-run: korporaz.xex korporac.xex
+run: korpora2.xex korporaz.xex korporac.xex
 	start $<
+
+korpora2.xex: korpora2.asx
+	xasm -o $@ -D COMPATIBLE=0 $<
 
 korporaz.xex: korporaz.asx
 	xasm -o $@ -D COMPATIBLE=0 $<
