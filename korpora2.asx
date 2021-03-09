@@ -18,17 +18,24 @@ main
 	sty	$2c6
 	eif
 loop
-	lda	$54
-var	equ	*-1
-	cmp	$d20a
-	lda	#0
-	rol	@
 	ift	COMPATIBLE
+	ldx	#$60
 	jsr	$e456
 	els
-	jsr	$f1a4
+	jsr	$f5ac
 	eif
-	jmp	loop
+	ldx	$54
+	ldy	#39
+byte
+	lda	#1
+pixel
+	cpx	$d20a
+	rol	@
+	bcc	pixel
+	sta	($64),y-
+	bpl	byte
+	inc	$54
+	bcs	loop	; jmp
 
 	ift	COMPATIBLE
 screen_device	dta	c'S:',$9b
