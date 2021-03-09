@@ -1,4 +1,4 @@
-run: korporaz.xex korporac.xex korpora2.xex korporc2.xex
+run: korporaz.xex korporac.xex ditherci.xex dithercc.xex
 	start $<
 
 korporaz.xex: korporaz.asx
@@ -10,14 +10,14 @@ korporac.xex: korporaz.asx
 korporaz.zip: korporaz.xex korporac.xex korporaz.txt
 	7z a -mx=9 -bd -bso0 -tzip $@ $^
 
-korpora2.xex: korpora2.asx
+ditherci.xex: ditherci.asx
 	xasm -o $@ -D COMPATIBLE=0 $<
 
-korporc2.xex: korpora2.asx
+dithercc.xex: ditherci.asx
 	xasm -o $@ -D COMPATIBLE=1 $<
 
-korpora2.zip: korpora2.xex korporc2.xex korpora2.txt
+ditherci.zip: ditherci.xex dithercc.xex ditherci.txt
 	7z a -mx=9 -bd -bso0 -tzip $@ $^
 
 clean:
-	$(RM) korporaz.xex korporac.xex korpora2.xex korporc2.xex korporaz.zip korpora2.zip
+	$(RM) korporaz.xex korporac.xex korporaz.zip ditherci.xex dithercc.xex ditherci.zip

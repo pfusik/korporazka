@@ -1,8 +1,7 @@
 Taquart presents
-"Korporazka 2"
+"Dither City"
 
 38-byte intro for Atari XL/XE
-(32 plus 6-byte DOS header)
 with at least 16 KB RAM
 PAL/NTSC compatible
 
@@ -13,16 +12,16 @@ http://www.lovebyte.party
 Programmed by
 Piotr '0xF' Fusik <fox@scene.pl>
 
-KORPORA2.XEX = 38-byte version
+DITHERCI.XEX = 38-byte version
   compatible with every stock XL/XE
 
-KORPORC2.XEX = version also
+DITHERCC.XEX = version also
   compatible with 400/800
   and non-standard OSes and DOSes
 
 Ingredients:
 
-           KORPORA2.XEX  KORPORC2.XEX
+           DITHERCI.XEX  DITHERCC.XEX
 DOS header       6            12
 Graphics mode    8            34
 Dithering       24            39
