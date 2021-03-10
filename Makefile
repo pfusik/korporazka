@@ -7,7 +7,7 @@ korporaz.xex: korporaz.asx
 korporac.xex: korporaz.asx
 	xasm -o $@ -D COMPATIBLE=1 $<
 
-korporaz.zip: korporaz.xex korporac.xex korporaz.txt
+korporaz.zip: korporaz.xex korporac.xex korporaz.txt korporaz.png
 	7z a -mx=9 -bd -bso0 -tzip $@ $^
 
 ditherci.xex: ditherci.asx
@@ -16,8 +16,10 @@ ditherci.xex: ditherci.asx
 dithercc.xex: ditherci.asx
 	xasm -o $@ -D COMPATIBLE=1 $<
 
-ditherci.zip: ditherci.xex dithercc.xex ditherci.txt
+ditherci.zip: ditherci.xex dithercc.xex ditherci.txt ditherci.png
 	7z a -mx=9 -bd -bso0 -tzip $@ $^
+
+dist: korporaz.zip ditherci.zip
 
 clean:
 	$(RM) korporaz.xex korporac.xex korporaz.zip ditherci.xex dithercc.xex ditherci.zip
