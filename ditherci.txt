@@ -24,9 +24,9 @@ Ingredients:
            DITHERCI.XEX  DITHERCC.XEX
 DOS header       6            12
 Graphics mode    8            34
-Dithering       24            39
+Dithering       24            41
 -------------------------------------
-Total:       38 bytes      85 bytes
+Total:       38 bytes      87 bytes
 
 Greetings:
 Agenda, Lamers, Desire, LaResistance,
